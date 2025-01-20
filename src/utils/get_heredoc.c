@@ -26,7 +26,7 @@ static int	read_here_doc(t_delim *delim, int inp_pipe,
 	{
 		if (!line)
 			break ;
-		if (ft_strncmp(delim->delim, line, ft_strlen(line)) == 0)
+		if (ft_strncmp(delim->delim, line, lencmp(delim->delim, line)) == 0)
 			return (free(line), 0);
 		if (write(inp_pipe, line, ft_strlen(line)) == -1
 			|| write(inp_pipe, "\n", 1) == -1)
